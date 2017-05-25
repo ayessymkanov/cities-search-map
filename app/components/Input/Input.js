@@ -15,7 +15,7 @@ class Input extends Component {
             <InputContainer>
                 <SearchInput
                     type="text"
-                    placeholder="Start typing"
+                    placeholder="Enter a city or a state name"
                     value={this.props.value}
                     onChange={this.handleChange} />
                 <Clear onClick={this.clearInput}></Clear>

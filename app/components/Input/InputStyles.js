@@ -7,9 +7,12 @@ export const SearchInput = styled.input`
     padding: 10px;
     border: 1px solid transparent;
     border-bottom: 1px solid #ccc;
-    text-align: center;
     font: 18px/1.5 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     color: #555;
+
+    &::-webkit-input-placeholder {
+        color: #eee;
+    }
 `
 
 export const InputContainer = styled.div`
@@ -19,7 +22,7 @@ export const InputContainer = styled.div`
 
 export const Clear = styled.span`
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     display: block;
     height: 20px;
