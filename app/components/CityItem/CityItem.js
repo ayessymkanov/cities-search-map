@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
 import {ListItem} from './CityItemStyles'
+import {connect} from 'react-redux'
+import {chooseCity} from '../../AC/chooseCity'
+import {setValue} from '../../AC/setValue'
 
-export default class CityItem extends Component {
+class CityItem extends Component {
     render() {
         return (
             <ListItem onClick={this.handleClick}>
@@ -10,6 +13,11 @@ export default class CityItem extends Component {
         )
     }
     handleClick = () => {
-        console.log(`${this.props.city.city} is clicked`)
+        const { city, state, latitude, longitude } = this.props.city
+        console.log(this.props.city)
+        this.props.chooseCity({lat: latitude, lng: longitude})
+        this.props.setValue(`${city}, ${state}`)
     }
 }
+
+export default connect(null, {chooseCity, setValue})(CityItem)

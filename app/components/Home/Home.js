@@ -1,8 +1,9 @@
 import React from 'react'
 import Input from '../Input/Input'
-import {HomeContainer, Title} from './HomeStyles'
+import {HomeContainer, Title, MapContainer} from './HomeStyles'
 import CityList from '../CityList/CityList'
 import {connect} from 'react-redux'
+import GoogleMapReact from 'google-map-react'
 
 class Home extends React.Component {
 
@@ -22,12 +23,6 @@ class Home extends React.Component {
             })
     }
 
-    componentWillReceiveProps(nextProps) {
-        console.log('Receiving next props', nextProps)
-        console.log('props', this.props)
-        console.log('state', this.state)
-    }
-
     findMatches = () => {
         const { input } = this.props
         const regex = new RegExp(input, 'gi')
@@ -35,20 +30,31 @@ class Home extends React.Component {
     }
 
     render() {
+        console.log('Home props', this.props)
         const cities = this.state.cities
         const empty = []
         return (
+            <div>
             <HomeContainer>
                 <Title>City search</Title>
                 <Input />
-            <CityList cities={this.findMatches()}/>
+            {this.props.showList && <CityList cities={this.findMatches()}/>}
+
             </HomeContainer>
+            <MapContainer>
+                <GoogleMapReact
+                center={this.props.coordinates}
+                defaultZoom={10} />
+            </MapContainer>
+            </div>
         )
     }
 }
 
 export default connect((state) => {
     return {
-        input: state.input
+        input: state.input,
+        showList: state.showList,
+        coordinates: state.coordinates
     }
 })(Home)

@@ -4,10 +4,10 @@ import CityItem from '../CityItem/CityItem'
 export default class CityList extends Component {
     render() {
         const { cities } = this.props
-        const items = cities.map(city => <li><CityItem city={city} /></li>)
+        const items = cities.map(city => <li key={city.rank}><CityItem city={city} /></li>)
         return (
             <List>
-                {items.length > 0 ? items : <NoItems>No matches</NoItems>}
+                {items.length > 0 ? items : ''}
             </List>
         )
     }
