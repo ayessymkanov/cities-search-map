@@ -4,14 +4,21 @@ export const SearchInput = styled.input`
     display: block;
     width: 100%;
     background-color: white;
-    padding: 10px;
+    padding: 10px 20px;
     border: 1px solid transparent;
     border-bottom: 1px solid #ccc;
     font: 18px/1.5 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     color: #555;
+    outline: none;
+    transition: all 150ms;
 
     &::-webkit-input-placeholder {
-        color: #eee;
+        color: #ccc;
+    }
+
+    &:focus {
+        border: 1px solid #3a329b;
+        box-shadow: 0 0 5px 0 #3a329b;
     }
 `
 

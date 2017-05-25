@@ -13,6 +13,9 @@ export const Title = styled.h1`
     font: bold 24px/1.5 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     margin: 10px auto;
     text-align: center;
+    color: #3a329b;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #fff;
 `
 
 export const MapContainer = styled.div`

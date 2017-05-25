@@ -5,7 +5,8 @@ export const Mark = styled.div`
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: #3a329b;
+    opacity: 0.75;
     &::after {
         display: block;
         content: '';
@@ -15,7 +16,7 @@ export const Mark = styled.div`
         width: 17px;
         height: 17px;
         border: 17px solid transparent;
-        border-top: 17px solid blue;
+        border-top: 17px solid #3a329b;
 
     }
 `

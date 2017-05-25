@@ -14,7 +14,6 @@ class CityItem extends Component {
     }
     handleClick = () => {
         const { city, state, latitude, longitude } = this.props.city
-        console.log(this.props.city)
         this.props.chooseCity(this.props.city)
         this.props.setValue(`${city}, ${state}`)
     }

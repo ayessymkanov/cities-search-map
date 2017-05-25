@@ -17,7 +17,8 @@ class Input extends Component {
                     type="text"
                     placeholder="Enter a city or a state name"
                     value={this.props.value}
-                    onChange={this.handleChange} />
+                    onChange={this.handleChange}
+                    autoFocus />
                 <Clear onClick={this.clearInput}></Clear>
             </InputContainer>
         )

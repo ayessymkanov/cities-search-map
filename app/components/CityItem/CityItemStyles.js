@@ -7,7 +7,7 @@ export const ListItem = styled.div`
     transition: all 150ms;
     cursor: pointer;
     &:hover {
-        background-color: #cecece;
+        background-color: #3a329b;
         color: white;
     }
 `

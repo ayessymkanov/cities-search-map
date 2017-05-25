@@ -31,7 +31,6 @@ class Home extends React.Component {
     }
 
     render() {
-        console.log('Home props', this.props)
         const cities = this.state.cities
         const empty = []
         return (

@@ -8,14 +8,8 @@ export default class Marker extends Component {
         lng: 0
     }
     render() {
-        console.log('Marker props', this.props)
         return (
-            <div>
-                <Mark />
-            </div>
+            <Mark />
         )
-    }
-    handleClick = () => {
-        console.log(this.props.city)
     }
 }
