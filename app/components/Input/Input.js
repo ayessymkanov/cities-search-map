@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import {SearchInput, InputContainer, Clear} from './InputStyles'
+import {connect} from 'react-redux'
+import {input} from '../../AC/input'
 
-export default class Input extends Component {
-    state = {
-        value: ''
-    }
+class Input extends Component {
 
     render() {
         return (
@@ -12,20 +11,18 @@ export default class Input extends Component {
                 <SearchInput
                     type="text"
                     placeholder="Start typing"
-                    value={this.state.value}
                     onChange={this.handleChange} />
                 <Clear onClick={this.clearInput}></Clear>
             </InputContainer>
         )
     }
     handleChange = (e) => {
-        this.setState({
-            value: e.target.value
-        })
+        console.log('handle change input', e.target.value)
+        this.props.input(e.target.value)
     }
     clearInput = () => {
-        this.setState({
-            value: ''
-        })
+        this.props.input('')
     }
 }
+
+export default connect(null, {input})(Input)
