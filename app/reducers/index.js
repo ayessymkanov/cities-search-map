@@ -2,9 +2,13 @@ const initialState = {
     input: '',
     showList: false,
     value: '',
-    coordinates: {
-        lat: 42.3133521,
-        lng: -71.1271971
+    city: {
+        city: 'Boston',
+        growth_from_2000_to_2013: "9.4%",
+        population:"645966",
+        state:"Massachusetts",
+        latitude: 42.3600825,
+        longitude: -71.0588801
     }
 }
 export function main(state=initialState, action) {
@@ -22,10 +26,7 @@ export function main(state=initialState, action) {
             return {
                 ...state,
                 showList: false,
-                coordinates: {
-                    lat: payload.lat,
-                    lng: payload.lng
-                }
+                city: payload
             }
         }
         case 'SET_VALUE': {

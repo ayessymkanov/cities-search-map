@@ -5,6 +5,8 @@ import {input} from '../../AC/input'
 import {chooseCity} from '../../AC/chooseCity'
 import {setValue} from '../../AC/setValue'
 
+
+
 class Input extends Component {
 
 
@@ -25,7 +27,7 @@ class Input extends Component {
         this.props.setValue(e.target.value)
     }
     clearInput = () => {
-        this.props.chooseCity()
+        this.props.chooseCity({})
         this.props.setValue('')
         this.props.input('')
     }

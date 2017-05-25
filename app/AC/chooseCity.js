@@ -1,6 +1,6 @@
-export function chooseCity(coordinates) {
+export function chooseCity(city) {
     return {
         type: 'CHOOSE_CITY',
-        payload: coordinates
+        payload: city
     }
 }

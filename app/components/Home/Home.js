@@ -4,6 +4,7 @@ import {HomeContainer, Title, MapContainer} from './HomeStyles'
 import CityList from '../CityList/CityList'
 import {connect} from 'react-redux'
 import GoogleMapReact from 'google-map-react'
+import Marker from '../Marker/Marker'
 
 class Home extends React.Component {
 
@@ -44,7 +45,13 @@ class Home extends React.Component {
             <MapContainer>
                 <GoogleMapReact
                 center={this.props.coordinates}
-                defaultZoom={10} />
+                defaultZoom={10}>
+                <Marker
+                    lat={this.props.coordinates.lat}
+                    lng={this.props.coordinates.lng}
+                    city={this.props.city}>
+                </Marker>
+                </GoogleMapReact>
             </MapContainer>
             </div>
         )
@@ -55,6 +62,10 @@ export default connect((state) => {
     return {
         input: state.input,
         showList: state.showList,
-        coordinates: state.coordinates
+        coordinates: {
+            lat: state.city.latitude,
+            lng: state.city.longitude
+        },
+        city: state.city
     }
 })(Home)
