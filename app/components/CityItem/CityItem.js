@@ -6,12 +6,19 @@ import {setValue} from '../../AC/setValue'
 
 class CityItem extends Component {
     render() {
+        const { city, state, population } = this.props.city
         return (
             <ListItem onClick={this.handleClick}>
-                <span>{this.props.city.city} - {this.props.city.state}</span>
+                <div>{city} - {state}</div>
+            <div>{this.numberWithCommas(population)}</div>
             </ListItem>
         )
     }
+
+    numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     handleClick = () => {
         const { city, state, latitude, longitude } = this.props.city
         this.props.chooseCity(this.props.city)
